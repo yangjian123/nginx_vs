@@ -1,0 +1,882 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6CD71FC6-5581-4523-9F0D-2725CAA14313}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.;src\core;src\event;src\event\modules;src\http;src\http\modules\perl;src\http\modules;src\http\v2;src\http\modules\v2;src\mail;src\misc;src\os\win32;src\stream;3rdparty\pcre\include;3rdparty\zlib\include;3rdparty\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>libeay32.lib;ssleay32.lib;zlib.lib;ws2_32.lib;pcre.lib;crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>3rdparty\openssl\lib;3rdparty\pcre\lib;3rdparty\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NO_SYS_TYPES_H;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>.;src\core;src\event;src\event\modules;src\http;src\http\modules\perl;src\http\modules;src\http\v2;src\http\modules\v2;src\mail;src\misc;src\os\win32;src\stream;3rdparty\pcre\include;3rdparty\zlib\include;3rdparty\openssl\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;pcre.lib;libeay32.lib;ssleay32.lib;zlib.lib;crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>3rdparty\openssl\lib;3rdparty\pcre\lib;3rdparty\zlib\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="objs\lib\zlib-1.2.8\as400\zlib.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="3rdparty\openssl\include\openssl\aes.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\asn1.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\asn1t.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\asn1_mac.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\bio.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\blowfish.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\bn.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\buffer.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\camellia.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\cast.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\cmac.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\cms.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\comp.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\conf.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\conf_api.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\crypto.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\des.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\des_old.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\dh.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\dsa.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\dso.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\dtls1.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ebcdic.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ec.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ecdh.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ecdsa.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\engine.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\err.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\evp.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\e_os2.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\hmac.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\idea.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\krb5_asn.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\kssl.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\lhash.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\md4.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\md5.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\mdc2.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\modes.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\objects.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\obj_mac.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ocsp.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\opensslconf.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\opensslv.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ossl_typ.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\pem.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\pem2.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\pkcs12.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\pkcs7.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\pqueue.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\rand.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\rc2.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\rc4.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ripemd.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\rsa.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\safestack.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\seed.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\sha.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\srp.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\srtp.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ssl.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ssl2.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ssl23.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ssl3.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\stack.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\symhacks.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\tls1.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ts.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\txt_db.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ui.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\ui_compat.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\whrlpool.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\x509.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\x509v3.h" />
+    <ClInclude Include="3rdparty\openssl\include\openssl\x509_vfy.h" />
+    <ClInclude Include="3rdparty\pcre\include\pcre.h" />
+    <ClInclude Include="3rdparty\zlib\include\zconf.h" />
+    <ClInclude Include="3rdparty\zlib\include\zlib.h" />
+    <ClInclude Include="ngx_auto_config.h" />
+    <ClInclude Include="ngx_auto_headers.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\apps\apps.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\apps\progs.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\apps\s_apps.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\apps\testdsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\apps\testrsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\apps\timeouts.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\apps\vms_term_sock.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\aes\aes.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\aes\aes_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\arm_arch.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\asn1\asn1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\asn1\asn1t.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\asn1\asn1_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\asn1\asn1_mac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\asn1\charmap.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bf\bf_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bf\bf_pi.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bf\blowfish.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bio\bio.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bio\bio_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bn\bn.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bn\bn_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bn\bn_prime.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\bn\rsaz_exp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\buffer\buffer.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\buildinf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\camellia\camellia.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\camellia\cmll_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\cast\cast.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\cast\cast_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\cast\cast_s.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\cmac\cmac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\cms\cms.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\cms\cms_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\comp\comp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\conf\conf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\conf\conf_api.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\conf\conf_def.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\constant_time_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\cryptlib.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\crypto.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\des\des.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\des\des_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\des\des_old.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\des\des_ver.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\des\rpc_des.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\des\spr.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\dh\dh.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\dsa\dsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\dsa\dsa_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\dso\dso.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ebcdic.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ecdh\ecdh.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ecdh\ech_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ecdsa\ecdsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ecdsa\ecs_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ec\ec.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ec\ec_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\engine\engine.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\engine\eng_int.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\err\err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\evp\evp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\evp\evp_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\fips_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\hmac\hmac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\idea\idea.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\idea\idea_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\jpake\jpake.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\krb5\krb5_asn.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\lhash\lhash.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\md2\md2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\md32_common.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\md4\md4.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\md4\md4_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\md5\md5.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\md5\md5_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\mdc2\mdc2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\modes\modes.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\modes\modes_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\objects\objects.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\objects\obj_dat.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\objects\obj_mac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\objects\obj_xref.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ocsp\ocsp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\opensslconf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\opensslv.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ossl_typ.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\o_dir.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\o_str.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\o_time.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\pem\pem.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\pem\pem2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\pkcs12\pkcs12.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\pkcs7\pkcs7.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ppc_arch.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\pqueue\pqueue.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rand\rand.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rand\rand_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rc2\rc2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rc2\rc2_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rc4\rc4.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rc4\rc4_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rc5\rc5.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rc5\rc5_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ripemd\ripemd.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ripemd\rmdconst.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ripemd\rmd_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rsa\rsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\rsa\rsa_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\seed\seed.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\seed\seed_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\sha\sha.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\sha\sha_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\sparc_arch.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\srp\srp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\srp\srp_grps.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\srp\srp_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\stack\safestack.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\stack\stack.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\store\store.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\store\str_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\symhacks.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ts\ts.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\txt_db\txt_db.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ui\ui.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ui\ui_compat.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\ui\ui_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\vms_rms.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\whrlpool\whrlpool.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\whrlpool\wp_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\x509v3\ext_dat.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\x509v3\pcy_int.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\x509v3\x509v3.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\x509\vpm_int.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\x509\x509.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\crypto\x509\x509_vfy.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\easy_tls\easy-tls.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\easy_tls\test.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\engines\cluster_labs\cluster_labs.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\engines\cluster_labs\hw_cluster_labs_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\engines\ibmca\hw_ibmca_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\engines\ibmca\ica_openssl_api.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\engines\rsaref\rsaref_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\engines\zencod\hw_zencod.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\engines\zencod\hw_zencod_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\demos\tunala\tunala.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\ccgost\e_gost_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\ccgost\gost2001_keyx.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\ccgost\gost89.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\ccgost\gosthash.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\ccgost\gost_keywrap.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\ccgost\gost_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\ccgost\gost_params.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_4758cca_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_aep_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_atalla_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_capi_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_chil_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_cswift_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_gmp_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_nuron_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_sureware_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\e_ubsec_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\vendor_defns\aep.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\vendor_defns\atalla.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\vendor_defns\cswift.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\vendor_defns\hwcryptohook.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\vendor_defns\hw_4758_cca.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\vendor_defns\hw_ubsec.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\engines\vendor_defns\sureware.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\e_os.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\e_os2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\aes.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\asn1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\asn1t.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\asn1_mac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\bio.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\blowfish.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\bn.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\buffer.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\camellia.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\cast.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\cmac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\cms.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\comp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\conf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\conf_api.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\crypto.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\des.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\des_old.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\dh.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\dsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\dso.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\dtls1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ebcdic.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ec.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ecdh.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ecdsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\engine.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\evp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\e_os2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\hmac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\idea.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\krb5_asn.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\kssl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\lhash.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\md4.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\md5.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\mdc2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\modes.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\objects.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\obj_mac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ocsp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\opensslconf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\opensslv.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ossl_typ.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\pem.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\pem2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\pkcs12.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\pkcs7.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\pqueue.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\rand.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\rc2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\rc4.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ripemd.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\rsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\safestack.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\seed.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\sha.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\srp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\srtp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ssl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ssl2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ssl23.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ssl3.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\stack.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\symhacks.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\tls1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ts.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\txt_db.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ui.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\ui_compat.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\whrlpool.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\x509.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\x509v3.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\inc32\openssl\x509_vfy.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\macos\buildinf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\macos\gethttps.src\CPStringUtils.hpp" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\macos\gethttps.src\ErrorHandling.hpp" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\macos\gethttps.src\MacSocket.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\macos\opensslconf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\macos\Randomizer.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\macos\_MWERKS_GUSI_prefix.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\macos\_MWERKS_prefix.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ms\tlhelp32.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ms\uplink.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\aes.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\asn1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\asn1t.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\asn1_mac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\bio.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\blowfish.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\bn.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\buffer.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\camellia.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\cast.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\cmac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\cms.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\comp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\conf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\conf_api.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\crypto.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\des.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\des_old.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\dh.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\dsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\dso.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\dtls1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ebcdic.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ec.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ecdh.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ecdsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\engine.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\evp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\e_os2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\hmac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\idea.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\krb5_asn.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\kssl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\lhash.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\md4.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\md5.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\mdc2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\modes.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\objects.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\obj_mac.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ocsp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\opensslconf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\opensslv.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ossl_typ.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\pem.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\pem2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\pkcs12.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\pkcs7.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\pqueue.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\rand.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\rc2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\rc4.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ripemd.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\rsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\safestack.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\seed.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\sha.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\srp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\srtp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ssl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ssl2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ssl23.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ssl3.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\stack.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\symhacks.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\tls1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ts.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\txt_db.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ui.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\ui_compat.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\whrlpool.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\x509.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\x509v3.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\openssl\include\openssl\x509_vfy.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\dtls1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\kssl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\kssl_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\srtp.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\ssl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\ssl2.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\ssl23.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\ssl3.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\ssl_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\ssl\tls1.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\test\ssltestlib.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\test\testutil.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\aes_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\apps.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\asn1_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\bf_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\bf_pi.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\bio_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\bn_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\bn_prime.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\buildinf.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\cast_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\cast_s.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\cmll_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\cms_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\conf_def.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\constant_time_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\cryptlib.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\des_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\des_ver.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\dsa_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\ech_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\ecs_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\ec_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\evp_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_4758cca_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_aep_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_atalla_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_capi_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_chil_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_cswift_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_gmp_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_nuron_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_os.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_sureware_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\e_ubsec_err.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\idea_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\kssl_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\md32_common.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\md4_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\md5_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\modes_lcl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\obj_dat.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\obj_xref.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\o_dir.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\o_str.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\o_time.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\pcy_int.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\progs.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\rc2_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\rc4_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\rmdconst.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\rmd_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\rpc_des.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\seed_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\sha_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\spr.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\ssltestlib.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\ssl_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\s_apps.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\testdsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\testrsa.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\testutil.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\ui_locl.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\vpm_int.h" />
+    <ClInclude Include="objs\lib\openssl-1.0.2j\tmp32\wp_locl.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\config.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\pcre.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\pcrecpp.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\pcrecpp_internal.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\pcreposix.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\pcre_internal.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\pcre_scanner.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\sljit\sljitConfig.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\sljit\sljitConfigInternal.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\sljit\sljitLir.h" />
+    <ClInclude Include="objs\lib\pcre-8.39\ucp.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\blast\blast.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\infback9\infback9.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\infback9\inffix9.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\infback9\inflate9.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\infback9\inftree9.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\iostream2\zstream.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\iostream3\zfstream.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\iostream\zfstream.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\minizip\crypt.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\minizip\ioapi.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\minizip\iowin32.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\minizip\mztools.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\minizip\unzip.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\minizip\zip.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\contrib\puff\puff.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\crc32.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\deflate.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\examples\gzlog.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\gzguts.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\inffast.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\inffixed.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\inflate.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\inftrees.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\trees.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\zconf.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\zlib.h" />
+    <ClInclude Include="objs\lib\zlib-1.2.8\zutil.h" />
+    <ClInclude Include="objs\ngx_auto_config.h" />
+    <ClInclude Include="objs\ngx_auto_headers.h" />
+    <ClInclude Include="src\core\nginx.h" />
+    <ClInclude Include="src\core\ngx_array.h" />
+    <ClInclude Include="src\core\ngx_buf.h" />
+    <ClInclude Include="src\core\ngx_config.h" />
+    <ClInclude Include="src\core\ngx_conf_file.h" />
+    <ClInclude Include="src\core\ngx_connection.h" />
+    <ClInclude Include="src\core\ngx_core.h" />
+    <ClInclude Include="src\core\ngx_crc.h" />
+    <ClInclude Include="src\core\ngx_crc32.h" />
+    <ClInclude Include="src\core\ngx_crypt.h" />
+    <ClInclude Include="src\core\ngx_cycle.h" />
+    <ClInclude Include="src\core\ngx_file.h" />
+    <ClInclude Include="src\core\ngx_hash.h" />
+    <ClInclude Include="src\core\ngx_inet.h" />
+    <ClInclude Include="src\core\ngx_list.h" />
+    <ClInclude Include="src\core\ngx_log.h" />
+    <ClInclude Include="src\core\ngx_md5.h" />
+    <ClInclude Include="src\core\ngx_module.h" />
+    <ClInclude Include="src\core\ngx_murmurhash.h" />
+    <ClInclude Include="src\core\ngx_open_file_cache.h" />
+    <ClInclude Include="src\core\ngx_palloc.h" />
+    <ClInclude Include="src\core\ngx_parse.h" />
+    <ClInclude Include="src\core\ngx_parse_time.h" />
+    <ClInclude Include="src\core\ngx_proxy_protocol.h" />
+    <ClInclude Include="src\core\ngx_queue.h" />
+    <ClInclude Include="src\core\ngx_radix_tree.h" />
+    <ClInclude Include="src\core\ngx_rbtree.h" />
+    <ClInclude Include="src\core\ngx_regex.h" />
+    <ClInclude Include="src\core\ngx_resolver.h" />
+    <ClInclude Include="src\core\ngx_rwlock.h" />
+    <ClInclude Include="src\core\ngx_sha1.h" />
+    <ClInclude Include="src\core\ngx_shmtx.h" />
+    <ClInclude Include="src\core\ngx_slab.h" />
+    <ClInclude Include="src\core\ngx_string.h" />
+    <ClInclude Include="src\core\ngx_syslog.h" />
+    <ClInclude Include="src\core\ngx_thread_pool.h" />
+    <ClInclude Include="src\core\ngx_times.h" />
+    <ClInclude Include="src\event\modules\ngx_iocp_module.h" />
+    <ClInclude Include="src\event\ngx_event.h" />
+    <ClInclude Include="src\event\ngx_event_connect.h" />
+    <ClInclude Include="src\event\ngx_event_openssl.h" />
+    <ClInclude Include="src\event\ngx_event_pipe.h" />
+    <ClInclude Include="src\event\ngx_event_posted.h" />
+    <ClInclude Include="src\event\ngx_event_timer.h" />
+    <ClInclude Include="src\http\modules\ngx_http_ssi_filter_module.h" />
+    <ClInclude Include="src\http\modules\ngx_http_ssl_module.h" />
+    <ClInclude Include="src\http\modules\perl\ngx_http_perl_module.h" />
+    <ClInclude Include="src\http\ngx_http.h" />
+    <ClInclude Include="src\http\ngx_http_cache.h" />
+    <ClInclude Include="src\http\ngx_http_config.h" />
+    <ClInclude Include="src\http\ngx_http_core_module.h" />
+    <ClInclude Include="src\http\ngx_http_request.h" />
+    <ClInclude Include="src\http\ngx_http_script.h" />
+    <ClInclude Include="src\http\ngx_http_upstream.h" />
+    <ClInclude Include="src\http\ngx_http_upstream_round_robin.h" />
+    <ClInclude Include="src\http\ngx_http_variables.h" />
+    <ClInclude Include="src\http\v2\ngx_http_v2.h" />
+    <ClInclude Include="src\http\v2\ngx_http_v2_module.h" />
+    <ClInclude Include="src\mail\ngx_mail.h" />
+    <ClInclude Include="src\mail\ngx_mail_imap_module.h" />
+    <ClInclude Include="src\mail\ngx_mail_pop3_module.h" />
+    <ClInclude Include="src\mail\ngx_mail_smtp_module.h" />
+    <ClInclude Include="src\mail\ngx_mail_ssl_module.h" />
+    <ClInclude Include="src\os\unix\ngx_alloc.h" />
+    <ClInclude Include="src\os\unix\ngx_atomic.h" />
+    <ClInclude Include="src\os\unix\ngx_channel.h" />
+    <ClInclude Include="src\os\unix\ngx_darwin.h" />
+    <ClInclude Include="src\os\unix\ngx_darwin_config.h" />
+    <ClInclude Include="src\os\unix\ngx_dlopen.h" />
+    <ClInclude Include="src\os\unix\ngx_errno.h" />
+    <ClInclude Include="src\os\unix\ngx_files.h" />
+    <ClInclude Include="src\os\unix\ngx_freebsd.h" />
+    <ClInclude Include="src\os\unix\ngx_freebsd_config.h" />
+    <ClInclude Include="src\os\unix\ngx_gcc_atomic_amd64.h" />
+    <ClInclude Include="src\os\unix\ngx_gcc_atomic_ppc.h" />
+    <ClInclude Include="src\os\unix\ngx_gcc_atomic_sparc64.h" />
+    <ClInclude Include="src\os\unix\ngx_gcc_atomic_x86.h" />
+    <ClInclude Include="src\os\unix\ngx_linux.h" />
+    <ClInclude Include="src\os\unix\ngx_linux_config.h" />
+    <ClInclude Include="src\os\unix\ngx_os.h" />
+    <ClInclude Include="src\os\unix\ngx_posix_config.h" />
+    <ClInclude Include="src\os\unix\ngx_process.h" />
+    <ClInclude Include="src\os\unix\ngx_process_cycle.h" />
+    <ClInclude Include="src\os\unix\ngx_setaffinity.h" />
+    <ClInclude Include="src\os\unix\ngx_setproctitle.h" />
+    <ClInclude Include="src\os\unix\ngx_shmem.h" />
+    <ClInclude Include="src\os\unix\ngx_socket.h" />
+    <ClInclude Include="src\os\unix\ngx_solaris.h" />
+    <ClInclude Include="src\os\unix\ngx_solaris_config.h" />
+    <ClInclude Include="src\os\unix\ngx_sunpro_atomic_sparc64.h" />
+    <ClInclude Include="src\os\unix\ngx_thread.h" />
+    <ClInclude Include="src\os\unix\ngx_time.h" />
+    <ClInclude Include="src\os\unix\ngx_user.h" />
+    <ClInclude Include="src\os\win32\ngx_alloc.h" />
+    <ClInclude Include="src\os\win32\ngx_atomic.h" />
+    <ClInclude Include="src\os\win32\ngx_dlopen.h" />
+    <ClInclude Include="src\os\win32\ngx_errno.h" />
+    <ClInclude Include="src\os\win32\ngx_files.h" />
+    <ClInclude Include="src\os\win32\ngx_os.h" />
+    <ClInclude Include="src\os\win32\ngx_process.h" />
+    <ClInclude Include="src\os\win32\ngx_process_cycle.h" />
+    <ClInclude Include="src\os\win32\ngx_shmem.h" />
+    <ClInclude Include="src\os\win32\ngx_socket.h" />
+    <ClInclude Include="src\os\win32\ngx_thread.h" />
+    <ClInclude Include="src\os\win32\ngx_time.h" />
+    <ClInclude Include="src\os\win32\ngx_user.h" />
+    <ClInclude Include="src\os\win32\ngx_win32_config.h" />
+    <ClInclude Include="src\stream\ngx_stream.h" />
+    <ClInclude Include="src\stream\ngx_stream_script.h" />
+    <ClInclude Include="src\stream\ngx_stream_ssl_module.h" />
+    <ClInclude Include="src\stream\ngx_stream_upstream.h" />
+    <ClInclude Include="src\stream\ngx_stream_upstream_round_robin.h" />
+    <ClInclude Include="src\stream\ngx_stream_variables.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ngx_modules.c" />
+    <ClCompile Include="ngx_pch.c" />
+    <ClCompile Include="src\core\nginx.c" />
+    <ClCompile Include="src\core\ngx_array.c" />
+    <ClCompile Include="src\core\ngx_buf.c" />
+    <ClCompile Include="src\core\ngx_conf_file.c" />
+    <ClCompile Include="src\core\ngx_connection.c" />
+    <ClCompile Include="src\core\ngx_cpuinfo.c" />
+    <ClCompile Include="src\core\ngx_crc32.c" />
+    <ClCompile Include="src\core\ngx_crypt.c" />
+    <ClCompile Include="src\core\ngx_cycle.c" />
+    <ClCompile Include="src\core\ngx_file.c" />
+    <ClCompile Include="src\core\ngx_hash.c" />
+    <ClCompile Include="src\core\ngx_inet.c" />
+    <ClCompile Include="src\core\ngx_list.c" />
+    <ClCompile Include="src\core\ngx_log.c" />
+    <ClCompile Include="src\core\ngx_md5.c" />
+    <ClCompile Include="src\core\ngx_module.c" />
+    <ClCompile Include="src\core\ngx_murmurhash.c" />
+    <ClCompile Include="src\core\ngx_open_file_cache.c" />
+    <ClCompile Include="src\core\ngx_output_chain.c" />
+    <ClCompile Include="src\core\ngx_palloc.c" />
+    <ClCompile Include="src\core\ngx_parse.c" />
+    <ClCompile Include="src\core\ngx_parse_time.c" />
+    <ClCompile Include="src\core\ngx_proxy_protocol.c" />
+    <ClCompile Include="src\core\ngx_queue.c" />
+    <ClCompile Include="src\core\ngx_radix_tree.c" />
+    <ClCompile Include="src\core\ngx_rbtree.c" />
+    <ClCompile Include="src\core\ngx_regex.c" />
+    <ClCompile Include="src\core\ngx_resolver.c" />
+    <ClCompile Include="src\core\ngx_rwlock.c" />
+    <ClCompile Include="src\core\ngx_sha1.c" />
+    <ClCompile Include="src\core\ngx_shmtx.c" />
+    <ClCompile Include="src\core\ngx_slab.c" />
+    <ClCompile Include="src\core\ngx_spinlock.c" />
+    <ClCompile Include="src\core\ngx_string.c" />
+    <ClCompile Include="src\core\ngx_syslog.c" />
+    <ClCompile Include="src\core\ngx_times.c" />
+    <ClCompile Include="src\event\modules\ngx_iocp_module.c" />
+    <ClCompile Include="src\event\modules\ngx_win32_select_module.c" />
+    <ClCompile Include="src\event\ngx_event.c" />
+    <ClCompile Include="src\event\ngx_event_accept.c" />
+    <ClCompile Include="src\event\ngx_event_acceptex.c" />
+    <ClCompile Include="src\event\ngx_event_connect.c" />
+    <ClCompile Include="src\event\ngx_event_openssl.c" />
+    <ClCompile Include="src\event\ngx_event_openssl_stapling.c" />
+    <ClCompile Include="src\event\ngx_event_pipe.c" />
+    <ClCompile Include="src\event\ngx_event_posted.c" />
+    <ClCompile Include="src\event\ngx_event_timer.c" />
+    <ClCompile Include="src\http\modules\ngx_http_access_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_auth_basic_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_autoindex_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_browser_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_charset_filter_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_chunked_filter_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_empty_gif_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_fastcgi_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_geo_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_gzip_filter_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_headers_filter_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_index_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_limit_conn_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_limit_req_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_log_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_map_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_memcached_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_not_modified_filter_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_proxy_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_range_filter_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_referer_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_rewrite_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_scgi_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_split_clients_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_ssi_filter_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_ssl_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_static_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_upstream_hash_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_upstream_ip_hash_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_upstream_keepalive_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_upstream_least_conn_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_upstream_zone_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_userid_filter_module.c" />
+    <ClCompile Include="src\http\modules\ngx_http_uwsgi_module.c" />
+    <ClCompile Include="src\http\ngx_http.c" />
+    <ClCompile Include="src\http\ngx_http_copy_filter_module.c" />
+    <ClCompile Include="src\http\ngx_http_core_module.c" />
+    <ClCompile Include="src\http\ngx_http_file_cache.c" />
+    <ClCompile Include="src\http\ngx_http_header_filter_module.c" />
+    <ClCompile Include="src\http\ngx_http_parse.c" />
+    <ClCompile Include="src\http\ngx_http_postpone_filter_module.c" />
+    <ClCompile Include="src\http\ngx_http_request.c" />
+    <ClCompile Include="src\http\ngx_http_request_body.c" />
+    <ClCompile Include="src\http\ngx_http_script.c" />
+    <ClCompile Include="src\http\ngx_http_special_response.c" />
+    <ClCompile Include="src\http\ngx_http_upstream.c" />
+    <ClCompile Include="src\http\ngx_http_upstream_round_robin.c" />
+    <ClCompile Include="src\http\ngx_http_variables.c" />
+    <ClCompile Include="src\http\ngx_http_write_filter_module.c" />
+    <ClCompile Include="src\os\win32\ngx_alloc.c" />
+    <ClCompile Include="src\os\win32\ngx_dlopen.c" />
+    <ClCompile Include="src\os\win32\ngx_errno.c" />
+    <ClCompile Include="src\os\win32\ngx_event_log.c" />
+    <ClCompile Include="src\os\win32\ngx_files.c" />
+    <ClCompile Include="src\os\win32\ngx_process.c" />
+    <ClCompile Include="src\os\win32\ngx_process_cycle.c" />
+    <ClCompile Include="src\os\win32\ngx_shmem.c" />
+    <ClCompile Include="src\os\win32\ngx_socket.c" />
+    <ClCompile Include="src\os\win32\ngx_thread.c" />
+    <ClCompile Include="src\os\win32\ngx_time.c" />
+    <ClCompile Include="src\os\win32\ngx_udp_wsarecv.c" />
+    <ClCompile Include="src\os\win32\ngx_user.c" />
+    <ClCompile Include="src\os\win32\ngx_win32_init.c" />
+    <ClCompile Include="src\os\win32\ngx_wsarecv.c" />
+    <ClCompile Include="src\os\win32\ngx_wsarecv_chain.c" />
+    <ClCompile Include="src\os\win32\ngx_wsasend.c" />
+    <ClCompile Include="src\os\win32\ngx_wsasend_chain.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="src\os\win32\nginx.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\os\win32\nginx.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
