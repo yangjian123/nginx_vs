@@ -44,6 +44,12 @@
     <Filter Include="os\unix">
       <UniqueIdentifier>{5515c5b0-7127-4f4c-9d36-8e81a3f3c5b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lua">
+      <UniqueIdentifier>{2682f300-ab47-4576-983c-a6ebd1faa29c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lua51">
+      <UniqueIdentifier>{595d0be4-24a6-499c-b39c-318510c596e1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="objs\lib\zlib-1.2.8\as400\zlib.inc">
@@ -1974,6 +1980,243 @@
     <ClInclude Include="src\stream\ngx_stream_variables.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\lua\ddebug.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_accessby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_args.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_balancer.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_bodyfilterby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_cache.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_capturefilter.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_clfactory.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_common.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_config.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_consts.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_contentby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_control.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_coroutine.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_ctx.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_directive.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_exception.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_headerfilterby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_headers.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_headers_in.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_headers_out.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_initby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_initworkerby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_lex.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_log.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_logby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_misc.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_ndk.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_output.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_pcrefix.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_phase.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_probe.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_regex.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_req_body.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_req_method.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_rewriteby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_script.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_semaphore.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_setby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_shdict.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_sleep.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_socket_tcp.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_socket_udp.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_ssl.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_ssl_certby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_ssl_session_fetchby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_ssl_session_storeby.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_string.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_subrequest.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_time.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_timer.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_uri.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_uthread.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_util.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_variable.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua\ngx_http_lua_worker.h">
+      <Filter>lua</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lapi.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lauxlib.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lcode.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\ldebug.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\ldo.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lfunc.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lgc.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\llex.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\llimits.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lmem.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lobject.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lopcodes.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lparser.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lstate.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lstring.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\ltable.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\ltm.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lua.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\luaconf.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lualib.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lundump.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lvm.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lua51\lzio.h">
+      <Filter>lua51</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ngx_modules.c" />
@@ -2319,6 +2562,266 @@
     </ClCompile>
     <ClCompile Include="src\os\win32\ngx_errno.c">
       <Filter>os\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test\test.c" />
+    <ClCompile Include="源.cpp" />
+    <ClCompile Include="src\lua\ngx_http_lua_accessby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_api.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_args.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_balancer.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_bodyfilterby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_cache.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_capturefilter.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_clfactory.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_config.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_consts.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_contentby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_control.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_coroutine.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_ctx.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_directive.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_exception.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_headerfilterby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_headers.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_headers_in.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_headers_out.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_initby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_initworkerby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_lex.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_log.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_logby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_misc.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_module.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_ndk.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_output.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_pcrefix.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_phase.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_regex.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_req_body.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_req_method.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_rewriteby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_script.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_semaphore.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_setby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_shdict.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_sleep.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_socket_tcp.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_socket_udp.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_ssl.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_ssl_certby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_ssl_ocsp.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_ssl_session_fetchby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_ssl_session_storeby.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_string.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_subrequest.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_time.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_timer.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_uri.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_uthread.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_util.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_variable.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua\ngx_http_lua_worker.c">
+      <Filter>lua</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lapi.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lauxlib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lbaselib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lcode.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\ldblib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\ldebug.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\ldo.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\ldump.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lfunc.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lgc.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\linit.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\liolib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\llex.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lmathlib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lmem.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\loadlib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lobject.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lopcodes.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\loslib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lparser.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lstate.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lstring.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lstrlib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\ltable.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\ltablib.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\ltm.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lundump.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lvm.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\lzio.c">
+      <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lua51\print.c">
+      <Filter>lua51</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
