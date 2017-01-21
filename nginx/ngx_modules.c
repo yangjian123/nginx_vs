@@ -56,6 +56,7 @@ extern ngx_module_t  ngx_http_copy_filter_module;
 extern ngx_module_t  ngx_http_range_body_filter_module;
 extern ngx_module_t  ngx_http_not_modified_filter_module;
 extern ngx_module_t  ngx_http_lua_module;
+extern ngx_module_t  ngx_http_echo_module;
 ngx_module_t *ngx_modules[] = {
     &ngx_core_module,
     &ngx_errlog_module,
@@ -109,6 +110,7 @@ ngx_module_t *ngx_modules[] = {
     &ngx_http_range_body_filter_module,
     &ngx_http_not_modified_filter_module,
 	&ngx_http_lua_module,
+	&ngx_http_echo_module,
     NULL
 };
 
@@ -165,6 +167,7 @@ char *ngx_module_names[] = {
     "ngx_http_range_body_filter_module",
     "ngx_http_not_modified_filter_module",
 	"ngx_http_lua_module",
+	"ngx_http_echo_module",
     NULL
 };
 

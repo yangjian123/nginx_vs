@@ -50,6 +50,9 @@
     <Filter Include="lua51">
       <UniqueIdentifier>{595d0be4-24a6-499c-b39c-318510c596e1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="echo">
+      <UniqueIdentifier>{66c62720-e2f9-411d-8bfd-a6bf42366197}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="objs\lib\zlib-1.2.8\as400\zlib.inc">
@@ -2217,6 +2220,45 @@
     <ClInclude Include="src\lua51\lzio.h">
       <Filter>lua51</Filter>
     </ClInclude>
+    <ClInclude Include="src\echo\ddebug.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_echo.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_filter.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_foreach.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_handler.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_location.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_module.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_request_info.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_sleep.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_subrequest.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_timer.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_util.h">
+      <Filter>echo</Filter>
+    </ClInclude>
+    <ClInclude Include="src\echo\ngx_http_echo_var.h">
+      <Filter>echo</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ngx_modules.c" />
@@ -2563,8 +2605,6 @@
     <ClCompile Include="src\os\win32\ngx_errno.c">
       <Filter>os\win32</Filter>
     </ClCompile>
-    <ClCompile Include="src\test\test.c" />
-    <ClCompile Include="源.cpp" />
     <ClCompile Include="src\lua\ngx_http_lua_accessby.c">
       <Filter>lua</Filter>
     </ClCompile>
@@ -2822,6 +2862,42 @@
     </ClCompile>
     <ClCompile Include="src\lua51\print.c">
       <Filter>lua51</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_echo.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_filter.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_foreach.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_handler.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_location.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_module.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_request_info.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_sleep.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_subrequest.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_timer.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_util.c">
+      <Filter>echo</Filter>
+    </ClCompile>
+    <ClCompile Include="src\echo\ngx_http_echo_var.c">
+      <Filter>echo</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
