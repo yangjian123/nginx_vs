@@ -1,0 +1,12 @@
+**/contrib
+**/[Dd]ebug
+**/[rR]elease
+**/html
+**/docs
+**/scgi_temp
+**/uwsgi_temp
+**/logs
+**/temp
+**/*.VC.db
+**/*.VC.opendb
+**/conf

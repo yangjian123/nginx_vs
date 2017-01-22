@@ -1059,6 +1059,7 @@
     <ClCompile Include="src\os\win32\ngx_wsarecv_chain.c" />
     <ClCompile Include="src\os\win32\ngx_wsasend.c" />
     <ClCompile Include="src\os\win32\ngx_wsasend_chain.c" />
+    <ClCompile Include="src\test\ngx_hello.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\os\win32\nginx.ico" />

@@ -2899,6 +2899,7 @@
     <ClCompile Include="src\echo\ngx_http_echo_var.c">
       <Filter>echo</Filter>
     </ClCompile>
+    <ClCompile Include="src\test\ngx_hello.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\os\win32\nginx.ico">
