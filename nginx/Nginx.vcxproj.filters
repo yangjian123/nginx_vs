@@ -53,6 +53,9 @@
     <Filter Include="echo">
       <UniqueIdentifier>{66c62720-e2f9-411d-8bfd-a6bf42366197}</UniqueIdentifier>
     </Filter>
+    <Filter Include="upload">
+      <UniqueIdentifier>{6cfd450b-392a-462c-87d4-b42e153a7e46}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="objs\lib\zlib-1.2.8\as400\zlib.inc">
@@ -2900,6 +2903,9 @@
       <Filter>echo</Filter>
     </ClCompile>
     <ClCompile Include="src\test\ngx_hello.c" />
+    <ClCompile Include="src\upload\ngx_http_upload_module.c">
+      <Filter>upload</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\os\win32\nginx.ico">

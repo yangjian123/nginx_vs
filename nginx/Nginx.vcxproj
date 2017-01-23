@@ -72,12 +72,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NGX_HAVE_OPENSSL_MD5_H;NGX_HAVE_OPENSSL_SHA1_H;NGX_OPENSSL_MD5;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <WarningLevel>Level4</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;src\core;src\event;src\event\modules;src\http;src\http\modules\perl;src\http\modules;src\http\v2;src\http\modules\v2;src\mail;src\misc;src\os\win32;src\stream;3rdparty\pcre\include;3rdparty\zlib\include;3rdparty\openssl\include;src\lua51;src\lua\api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;src\core;src\event;src\event\modules;src\http;src\http\modules\perl;src\http\modules;src\http\v2;src\http\modules\v2;src\mail;src\misc;src\os\win32;src\stream;3rdparty\pcre\include;3rdparty\zlib\include;3rdparty\openssl\include;src\lua51;src\lua\api;src\upload;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
@@ -90,11 +90,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;NO_SYS_TYPES_H;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NGX_HAVE_OPENSSL_MD5_H;NGX_HAVE_OPENSSL_SHA1_H;NGX_OPENSSL_MD5;NO_SYS_TYPES_H;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <AdditionalIncludeDirectories>.;src\core;src\event;src\event\modules;src\http;src\http\modules\perl;src\http\modules;src\http\v2;src\http\modules\v2;src\mail;src\misc;src\os\win32;src\stream;3rdparty\pcre\include;3rdparty\zlib\include;3rdparty\openssl\include;src\lua51;src\lua\api;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;src\core;src\event;src\event\modules;src\http;src\http\modules\perl;src\http\modules;src\http\v2;src\http\modules\v2;src\mail;src\misc;src\os\win32;src\stream;3rdparty\pcre\include;3rdparty\zlib\include;3rdparty\openssl\include;src\lua51;src\lua\api;src\upload;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -1060,6 +1060,7 @@
     <ClCompile Include="src\os\win32\ngx_wsasend.c" />
     <ClCompile Include="src\os\win32\ngx_wsasend_chain.c" />
     <ClCompile Include="src\test\ngx_hello.c" />
+    <ClCompile Include="src\upload\ngx_http_upload_module.c" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="src\os\win32\nginx.ico" />

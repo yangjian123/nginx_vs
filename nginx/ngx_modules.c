@@ -58,6 +58,7 @@ extern ngx_module_t  ngx_http_not_modified_filter_module;
 extern ngx_module_t  ngx_http_lua_module;
 extern ngx_module_t  ngx_http_echo_module;
 extern ngx_module_t  ngx_http_hello_module;
+extern ngx_module_t  ngx_http_upload_module;
 ngx_module_t *ngx_modules[] = {
     &ngx_core_module,
     &ngx_errlog_module,
@@ -113,6 +114,7 @@ ngx_module_t *ngx_modules[] = {
 	&ngx_http_lua_module,
 	&ngx_http_echo_module,
 	&ngx_http_hello_module,
+	&ngx_http_upload_module,
     NULL
 };
 
@@ -171,6 +173,7 @@ char *ngx_module_names[] = {
 	"ngx_http_lua_module",
 	"ngx_http_echo_module",
 	"ngx_http_hello_module",
+	"ngx_http_upload_module",
     NULL
 };
 
